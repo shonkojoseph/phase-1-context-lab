@@ -9,17 +9,17 @@
  for you to use if you need it!
  */
 
-//  const allWagesFor = function () {
-//     const eligibleDates = this.timeInEvents.map(function (e) {
-//         return e.date
-//     })
+ const allWagesFor = function () {
+    const eligibleDates = this.timeInEvents.map(function (e) {
+        return e.date
+    })
 
-//     const payable = eligibleDates.reduce(function (memo, d) {
-//         return memo + wagesEarnedOnDate.call(this, d)
-//     }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
+    const payable = eligibleDates.reduce(function (memo, d) {
+        return memo + wagesEarnedOnDate.call(this, d)
+    }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
 
-//     return payable
-// }
+    return payable
+}
 
 let createEmployeeRecord = function(row){
     return {
@@ -80,18 +80,7 @@ let wagesEarnedOnDate = function(dateSought){
     return parseFloat(rawWage.toString())
 }
 
-let allWagesFor = function(){
-    let eligibleDates = this.timeInEvents.map(function(e){
-        return e.date
-    })
-
-    let payable = eligibleDates.reduce(function(memo, d){
-        return memo + wagesEarnedOnDate.call(this, d)
-    }.bind(this), 0)
-
-    return payable
-}
-
+ 
 let findEmployeeByFirstName = function(srcArray, firstName) {
   return srcArray.find(function(rec){
     return rec.firstName === firstName
